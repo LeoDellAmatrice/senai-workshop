@@ -1,0 +1,275 @@
+/* Definições de cores e variáveis */
+@font-face {
+    font-family: 'Heavitas';
+    src: url('../fonts/Heavitas.ttf') format('truetype');
+}
+
+:root {
+    --background-color: #f4f4f4;
+    --text-color: #000;
+    --header-background: #333;
+    --header-color: #fff;
+    --section-background: #fff;
+    --section-alt-background: #f0f0f0; /* Seções alternadas */
+    --button-background: #C62828; /* Vermelho SENAI */
+    --button-color: #fff;
+    --button-hover-background: #B71C1C; /* Vermelho mais escuro */
+    --link-color: #C62828; /* Vermelho SENAI */
+    --link-hover-color: #B71C1C;
+    --highlight-color: #C62828; /* Cor de destaque */
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --focus-color: #C62828; /* Vermelho SENAI */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 1s, color 1s;
+}
+
+body.dark-mode {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --header-background: #1e1e1e;
+    --header-color: #e0e0e0;
+    --section-background: #2e2e2e;
+    --section-alt-background: #1e1e1e;
+    --button-background: #EF5350; /* Vermelho claro para modo escuro */
+    --button-color: #000;
+    --button-hover-background: #C62828;
+    --link-color: #EF5350;
+    --link-hover-color: #E53935;
+    --highlight-color: #EF5350;
+    --shadow-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Estilo do cabeçalho */
+header {
+    background: var(--header-background);
+    color: var(--header-color);
+    padding: 1rem 0;
+    text-align: center;
+    transition: background-color 1s, color 1s;
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'Heavitas', sans-serif;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-family: 'Heavitas', sans-serif;
+}
+
+nav ul li a:hover {
+    color: var(--link-hover-color);
+}
+
+nav ul li a:focus {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 2px;
+}
+
+#theme-toggle {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.6rem;
+    background: var(--button-background);
+    color: var(--button-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background-color 1s, color 1s, transform 0.3s;
+    font-family: 'Heavitas', sans-serif;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.05);
+    background-color: var(--button-hover-background);
+}
+
+/* Estilo das seções */
+section {
+    padding: 2rem;
+    background: var(--section-background);
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: 0 0 20px var(--shadow-color);
+    border-radius: 10px;
+    transition: background-color 1s, box-shadow 1s;
+}
+
+section:nth-of-type(odd) {
+    background-color: var(--section-alt-background);
+}
+
+section h2 {
+    border-bottom: 2px solid var(--highlight-color);
+    padding-bottom: 0.5rem;
+    transition: border-color 1s;
+    color: var(--highlight-color);
+    font-family: 'Heavitas', sans-serif;
+}
+
+/* Estilo do formulário de inscrição */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 1rem;
+}
+
+form input {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 1rem;
+    background: var(--button-background);
+    color: var(--button-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Heavitas', sans-serif;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: var(--button-hover-background);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:focus {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 2px;
+}
+
+/* Estilo do FAQ */
+#faq {
+    padding: 2rem;
+    background: var(--section-background);
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: 0 0 20px var(--shadow-color);
+    border-radius: 10px;
+    transition: background-color 1s, box-shadow 1s;
+}
+
+#faq h2 {
+    border-bottom: 2px solid var(--highlight-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    transition: border-color 1s;
+    color: var(--highlight-color);
+    font-family: 'Heavitas', sans-serif;
+}
+
+.accordion {
+    background-color: var(--header-background);
+    color: var(--header-color);
+    cursor: pointer;
+    padding: 1rem;
+    width: 100%;
+    border: 1px solid #000000;
+    text-align: left;
+    outline: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    transition: background-color 0.3s;
+    font-family: Arial, sans-serif; /* Fonte original restaurada */
+}
+
+.accordion:hover,
+.accordion.active {
+    background-color: var(--button-hover-background);
+}
+
+.accordion:focus {
+    outline: none;
+}
+
+.panel {
+    padding: 0 1rem;
+    background-color: var(--section-background);
+    display: none;
+    overflow: hidden;
+    max-height: 0;
+    border-left: 4px solid var(--highlight-color); /* Cor da borda ajustada */
+    border-radius: 0 0 5px 5px;
+    transition: max-height 0.3s ease-out, border-color 1s;
+}
+
+body.dark-mode .panel {
+    border-left: 4px solid var(--link-color); /* Ajuste para o modo escuro */
+}
+
+.panel.open {
+    display: block;
+    max-height: 500px;
+}
+
+.panel p {
+    margin: 0.5rem 0;
+}
+
+/* Estilo do rodapé */
+footer {
+    background: var(--header-background);
+    color: var(--header-color);
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px var(--shadow-color);
+    transition: background-color 1s, color 1s;
+}
+
+footer div {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin: 0.5rem 0;
+}
+
+footer a {
+    color: var(--header-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
